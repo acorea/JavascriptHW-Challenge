@@ -1,14 +1,22 @@
+const samples_json = "https://github.com/acorea/plot.ly_challenge/blob/main/StarterCode/samples.json";
+
+var samples = ['a'];
+var metadata = [];
+// Fetch the JSON data and console log it
+d3.json(samples_json).then(function(data) {
+  samples = data.samples;
+  metadata = data.metadata;
+  console.log(data)
+  init();
+});
+
 // Function for change on dropdown menu
 function optionChanged(selectedID){
 
     // Check if value is selected in dropdown
     console.log(selectedID);
  
-    // Read the json file for the data
-    d3.json("data/samples.json").then((data) => {
- 
-    //  console.log(data);
- 
+   
     // Clears dropdown
     d3.select("#selDataset").html("");   
     
