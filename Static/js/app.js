@@ -1,6 +1,6 @@
 // Step 1: Plotly
 // Use the D3 library to read in samples.json.
-const samples = "https://raw.githubusercontent.com/acorea/plot.ly_challenge/main/StarterCode/samples.json"
+const samples = "https://raw.githubusercontent.com/acorea/plot.ly_challenge/main/Static/data/samples.json"
 
 var samples = ['a'];
 var metadata = [];
