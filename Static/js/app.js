@@ -12,7 +12,7 @@ d3.json(samples_json).then(function(data) {
   init();
 });
 
-
+//Update dropdown
 function init() {
     plotGraphsAndMetadata(samples[0], metadata[0])
     dropdown = d3.select('#selDataset')
@@ -22,6 +22,11 @@ function init() {
   }
 
 d3.selectAll("#selDataset").on("change", getData);
+
+//Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+//Use `sample_values` as the values for the bar chart.
+//Use `otu_ids` as the labels for the bar chart.
+//Use `otu_labels` as the hovertext for the chart.
 
 function plotGraphsAndMetadata(sample, meta_sample) {
 
@@ -40,6 +45,13 @@ function plotGraphsAndMetadata(sample, meta_sample) {
 
     Plotly.newPlot('bar', bar_data, bar_layout);
   
+//Create a bubble chart that displays each sample.
+//Use `otu_ids` for the x values.
+//Use `sample_values` for the y values.
+//Use `sample_values` for the marker size.
+//Use `otu_ids` for the marker colors.
+//Use `otu_labels` for the text values.
+
     var bub_data = [{
           y: sample.sample_values,
           x: sample.otu_ids,
