@@ -14,8 +14,8 @@ d3.json(samples_json).then(function(data) {
 
 //Update dropdown
 function init() {
-    plotGraphsAndMetadata(samples[0], metadata[0])
-    dropdown = d3.select('#selDataset')
+    plotGraphsAndMetadata(samples[0], metadata[0]);
+    dropdown = d3.select('#selDataset');
     samples.forEach((value, i) =>
         dropdown.append('option').attr('value',i).text(value.id)
     )
@@ -73,7 +73,7 @@ function plotGraphsAndMetadata(sample, meta_sample) {
     Plotly.newPlot('bubble', bub_data, bub_layout);
   
     sample_metadata = d3.select('#sample-metadata');
-    sample_metadata.selectAll('p').remove()
+    sample_metadata.selectAll('p').remove();
     for(key in meta_sample)
           sample_metadata.append('p').text(`${key}:${meta_sample[key]}`);
 }
@@ -83,4 +83,5 @@ function getData() {
     var i = dropdownMenu.property("value");
     
     plotGraphsAndMetadata(samples[i], metadata[i])
-}
+};
+init();
