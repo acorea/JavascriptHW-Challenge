@@ -1,8 +1,8 @@
 // Step 1: Plotly
 // Use the D3 library to read in samples.json.
-const samples = "https://raw.githubusercontent.com/acorea/JavascriptHW-Challenge/main/Static/data/samples.json"
+const samples_json = "https://raw.githubusercontent.com/acorea/JavascriptHW-Challenge/main/Static/data/samples.json"
 
-let samples = ['a'];
+let samples = [];
 let metadata = [];
 
 // Fetch the JSON data and console log it
@@ -78,6 +78,5 @@ function getData() {
     let dropdownMenu = d3.select("#selDataset");
     let i = dropdownMenu.property("value");
     
-    plotGraphsAndMetadata(samples[i], metadata[i])
-};
-init();
+    plotGraphsAndMetadata(samples[i], metadata[i]);
+}
